@@ -253,7 +253,7 @@ class HasCovarianceMatrix(TakesData):
             # Residual sum of squares
             rss = 2 * objective(**key2str(best_fit_params))
             # Degrees of freedom
-            raw_dof = np.sum([np.product(shape) for shape in self.data_shapes[1]])
+            raw_dof = np.sum([np.prod(shape) for shape in self.data_shapes[1]])
             dof = raw_dof - len(self.model.params)
             if self.absolute_sigma:
                 # When interpreting as measurement error, we do not rescale.
